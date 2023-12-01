@@ -28,7 +28,7 @@ app.get('/api/users', (req, res) => {
   res.header('Access-Control-Allow-Origin', '*'); // Set CORS headers manually
   res.json(users);
 });
-// Route to handle the addition of new users (POST request)
+// (POST request)
 app.post('/api/users', (req, res) => {
   const newUser = req.body;
 
@@ -37,7 +37,7 @@ app.post('/api/users', (req, res) => {
     return res.status(400).json({ error: 'Invalid email address' });
   }
 
-  // Add the new user to the list
+  // Add the new user
   users = [...users, { ...newUser, id: users.length + 1 }];
 
   // Respond with the newly added user
